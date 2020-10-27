@@ -2,9 +2,9 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import CharacterList from './CharacterList';
-import { getCharacters } from '../../services/rickAndMortyApi';
+import { getCharacters } from '../services/rickAndMortyApi';
 
-jest.mock('../../services/rickAndMortyApi.js');
+jest.mock('../services/rickAndMortyApi.js');
 
 describe('CharacterList component', () => {
   it('displays a list of characters after a brief load', async() => {
