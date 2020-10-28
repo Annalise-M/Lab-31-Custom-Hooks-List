@@ -6,7 +6,6 @@ const CharacterDetail = () => {
   const { id } = useParams();
   const { loading, character } = useCharacterById(id);
   if(loading) return <h1>Loading...</h1>;
-  console.log(character, 'wahhhhhhhhhhhhhhhhhhhhyyyyyyyyyyy????');
 
   return (
     <>
