@@ -4,16 +4,25 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import CharacterPage from '../pages/CharacterPage';
+import CharacterDetailPage from '../../pages/CharacterDetailPage';
+import CharacterPage from '../../pages/CharacterPage';
 
+
+// eslint-disable-next-line max-len
+// think about creating a function and calling it for the Header <Link to> section...
 export default function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={CharacterPage} />
-      </Switch>
-    </Router>
+    <>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={CharacterPage} />
+          <Route exact path="/characters/:id" component={CharacterDetailPage} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 
-//return <CharacterList />;
+{/* <Link to="/">Character List</Link>
+<Link to="/characters">Character Details</Link> */}
+

@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
-import { getCharacterById, getCharacters } from '../services/rickAndMortyApi';
+// eslint-disable-next-line max-len
+import { getCharacterById, getCharacters } from '../components/services/rickAndMortyApi';
 
-export const useCharacters = () => {
+export const useCharacters = page => {
   const [loading, setLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    getCharacters()
+    getCharacters(page)
       .then(fetchedCharacters => setCharacters(fetchedCharacters))
       .finally(() => setLoading(false));
-  }, []);
+  }, [page]);
   
   return {
     loading,

@@ -1,15 +1,18 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import { useCharacters } from '../hooks/characters';
+import PropTypes from 'prop-types';
+import { useCharacters } from '../../hooks/characters';
 import CharacterItem from '../characters/CharacterItem';
+import { Link } from 'react-router-dom';
 
-const CharacterList = () => {
-  const { loading, characters } = useCharacters();
+const CharacterList = ({ page }) => {
+  const { loading, characters } = useCharacters(page);
   if(loading) return <h1>Loading...</h1>;
 
   const characterElements = characters.map(character => (
     <li key={character.id}>
-      <CharacterItem {...character} />
+      <Link to={`/characters/${character.id}`}>
+        <CharacterItem {...character} />
+      </Link>
     </li>
   ));
   
@@ -21,7 +24,7 @@ const CharacterList = () => {
 };
 
 CharacterList.propTypes = {
-
+  page: PropTypes.number
 };
 
 export default CharacterList;

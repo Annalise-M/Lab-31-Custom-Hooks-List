@@ -1,8 +1,9 @@
-export const getCharacters = async() => {
-  const res = await fetch('https://rickandmortyapi.com/api/character/');
+export const getCharacters = async(page = 1) => {
+  // eslint-disable-next-line max-len
+  const res = await fetch(`https://rickandmortyapi.com/api/character/?page=${page}`);
   const json = await res.json();
 
-  if(!res.ok) throw 'Unable to fetch from api';
+  if(!res.ok) throw 'Unable to fetch from Api';
 
   return json.results.map(character => ({
     id: character.id,

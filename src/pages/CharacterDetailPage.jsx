@@ -1,6 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import CharacterDetail from '../character-detail/CharacterDetail';
+import CharacterDetail from '../components/character-detail/CharacterDetail';
 
 const CharacterDetailPage = () => {
   <CharacterDetail />;

@@ -1,9 +1,8 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter, Route } from 'react-router-dom';
-// import CharacterDetail from './CharacterDetail';
-import { getCharacterById } from '../services/rickAndMortyApi.js';
 import CharacterDetail from './CharacterDetail.jsx';
+import { getCharacterById } from '../services/rickAndMortyApi.js';
 
 jest.mock('../services/rickAndMortyApi.js');
 
@@ -17,10 +16,9 @@ describe('CharacterDetail componenet', () => {
       species: 'Human',
       imageUrl: 'morty.png'
     });
-    render(
-      <MemoryRouter initialEntries={['/character/:id']}>
-        <Route path="/character/:id" component={CharacterDetail}/>
-      </MemoryRouter>);
+    render(<MemoryRouter initialEntries={['/character/1']}>
+      <Route path="/character/:id" component={CharacterDetail}/>
+    </MemoryRouter>);
 
     screen.getByText('Loading...');
 

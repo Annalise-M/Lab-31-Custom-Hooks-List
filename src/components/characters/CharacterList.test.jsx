@@ -15,7 +15,6 @@ describe('CharacterList component', () => {
         imageUrl: 'morty.png'
       }
     ]);
-
     render(
       <MemoryRouter>
         <CharacterList />
