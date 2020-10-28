@@ -11,3 +11,19 @@ export const getCharacters = async() => {
     imageUrl: character.image
   }));
 };
+
+export const getCharacterById = async(id) => {
+  const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+  const json = await res.json();
+
+  if(!res.ok) throw 'Unable to fetch this ONE CHARACTER DATA from api';
+
+  return {
+    id: json.id,
+    name: json.name,
+    status: json.status,
+    gender: json.gender,
+    species: json.species,
+    imageUrl: json.image
+  };
+};
