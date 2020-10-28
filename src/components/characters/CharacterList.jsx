@@ -9,11 +9,13 @@ const CharacterList = ({ page }) => {
   if(loading) return <h1>Loading...</h1>;
 
   const characterElements = characters.map(character => (
-    <li key={character.id}>
-      <Link to={`/characters/${character.id}`}>
-        <CharacterItem {...character} />
-      </Link>
-    </li>
+    <>
+      <li key={character.id}>
+        <Link to={`/character/${character.id}`}>
+          <CharacterItem {...character} />
+        </Link>
+      </li>
+    </>
   ));
   
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowseRouter as Router,
+  Router,
   Switch,
   Route
 } from 'react-router-dom';
@@ -16,13 +16,11 @@ export default function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={CharacterPage} />
-          <Route exact path="/characters/:id" component={CharacterDetailPage} />
+  eslint-disable-next-line max-len
+          <Route exact path="/character/:id" component={CharacterDetailPage} />
         </Switch>
       </Router>
     </>
   );
 }
-
-{/* <Link to="/">Character List</Link>
-<Link to="/characters">Character Details</Link> */}
 
